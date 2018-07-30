@@ -1,13 +1,18 @@
 <p id="notice"><%= notice %></p>
 
+<h1><%= @post.title %></h1>
+
 <p>
-  <strong>Title:</strong>
-  <%= @post.title %>
+  <%= @post.body %>
 </p>
 
 <p>
-  <strong>Body:</strong>
-  <%= @post.body %>
+  <strong>Comments:</strong>
+  <ul>
+    <% for comment in @comments || [] %>
+      <li><strong><%= comment.handle %></strong> says: <%= comment.body %></li>
+    <% end %>
+  </ul>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
