@@ -13,6 +13,8 @@
       <li><strong><%= comment.handle %></strong> says: <%= comment.body %></li>
     <% end %>
   </ul>
+
+  <%= render 'comments/form', comment: Comment.new(post: @post) %>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
